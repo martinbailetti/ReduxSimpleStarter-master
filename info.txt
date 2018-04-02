@@ -1,0 +1,5 @@
+https://github.com/StephenGrider/ReduxSimpleStarter
+npm install
+npm start
+
+containers son los que conectan con redux
