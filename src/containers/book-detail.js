@@ -1,11 +1,30 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux'; 
 
-export default class BookDetail extends Component{
+class BookDetail extends Component{
 
 	render(){
+		if(!this.props.book){
 
+			return <div>Selecciona</div>
+		}
 		return(
-			<div></div>
+			<div>
+				<h3>Detalle</h3>
+				<div>{this.props.book.title}</div>
+			</div>
 			);
 	}
 }
+
+function mapStateToProps(state){
+
+	return {
+
+		book: state.activeBook
+	};
+
+}
+
+
+export default connect(mapStateToProps)(BookDetail)
